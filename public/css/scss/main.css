@@ -1,0 +1,290 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  line-height: 18px;
+  overflow-x: hidden;
+  /*
+    homepage open
+  */
+  /*
+    homepage close
+  */
+  /*
+    fruits open
+  */
+  /*
+    fruits close
+  */
+  /*
+    fruits-settings open
+  */
+  /*
+    fruits-settings close
+  */ }
+  body a, body button {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid #5CBCF6;
+    border-radius: 10px;
+    margin-right: 15px;
+    background: #5CBCF6;
+    color: #ffffff;
+    outline: 0; }
+    body a:last-child, body button:last-child {
+      margin-right: 0; }
+  body a.home {
+    margin-top: 10px; }
+
+@keyframes background {
+  0% {
+    background: transparent; }
+  100% {
+    background: rgba(0, 0, 0, 0.7); } }
+  body .modal-error,
+  body .modal-add,
+  body .modal-message,
+  body .modal-remove {
+    z-index: 2;
+    display: flex;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    animation: background 1s;
+    justify-content: center;
+    align-items: center; }
+    body .modal-error .error,
+    body .modal-add .error,
+    body .modal-message .error,
+    body .modal-remove .error {
+      padding: 50px 50px 20px;
+      display: flex;
+      background: #fff;
+      flex-direction: column;
+      max-width: 320px;
+      align-items: center;
+      justify-content: center; }
+      body .modal-error .error button,
+      body .modal-add .error button,
+      body .modal-message .error button,
+      body .modal-remove .error button {
+        border-radius: 0;
+        margin-top: 30px;
+        cursor: pointer;
+        width: 100%; }
+  body fruits .content {
+    display: flex;
+    position: relative; }
+    body fruits .content span {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #cccccc;
+      margin-bottom: 10px;
+      width: 100%; }
+    body fruits .content span.clear {
+      height: 30px;
+      width: 150px;
+      position: absolute;
+      right: -150px;
+      cursor: pointer; }
+    body fruits .content span.sum-calorie {
+      height: 30px;
+      width: 250px;
+      position: absolute;
+      right: 0;
+      bottom: -30px;
+      margin: 0; }
+    body fruits .content table {
+      width: 100%; }
+      body fruits .content table thead tr td {
+        height: 30px; }
+      body fruits .content table tbody tr td {
+        height: 30px;
+        text-align: center; }
+        body fruits .content table tbody tr td:last-child {
+          background: url(../../images/icons/close.png) no-repeat;
+          width: 30px;
+          background-size: cover;
+          cursor: pointer; }
+    body fruits .content .options-block {
+      width: 300px;
+      border: 1px solid #cccccc;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      body fruits .content .options-block select, body fruits .content .options-block input {
+        width: 200px;
+        height: 25px;
+        border: none;
+        margin: 10px auto;
+        display: flex;
+        outline: 0;
+        border-radius: 7px;
+        padding: 0 0 0 5px;
+        box-sizing: border-box;
+        cursor: pointer; }
+      body fruits .content .options-block select {
+        background: #cccccc; }
+      body fruits .content .options-block input {
+        border: 1px solid; }
+      body fruits .content .options-block button {
+        display: flex;
+        margin: 10px auto;
+        width: 130px;
+        padding: 5px;
+        justify-content: center;
+        cursor: pointer; }
+    body fruits .content .description-block {
+      width: 600px;
+      border: 1px solid #cccccc;
+      box-sizing: border-box;
+      border-left: transparent; }
+      body fruits .content .description-block .information-block .info, body fruits .content .description-block .information-block .calorie {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        margin-bottom: 30px; }
+      body fruits .content .description-block .information-block .calorie {
+        margin-bottom: 0; }
+  body fruits-settings .options {
+    display: flex;
+    align-items: center; }
+    body fruits-settings .options .search-block, body fruits-settings .options .add-block {
+      position: relative; }
+    body fruits-settings .options .search-icon, body fruits-settings .options .add-icon {
+      background: url(../../images/icons/search.png) no-repeat;
+      width: 19px;
+      height: 19px;
+      background-size: cover;
+      position: absolute;
+      left: 7px;
+      top: 13px; }
+    body fruits-settings .options .add-icon {
+      background: #ffffff url(../../images/icons/plus.png) no-repeat;
+      background-size: cover;
+      top: 7.5px;
+      border-radius: 9px; }
+    body fruits-settings .options .search-fruit {
+      width: 200px;
+      height: 25px;
+      margin: 10px 10px 10px 0;
+      display: flex;
+      outline: 0;
+      border-radius: 10px 0;
+      padding: 0 0 0 30px;
+      box-sizing: border-box;
+      cursor: pointer;
+      border: 1px solid #5D5D5D;
+      color: #5D5D5D; }
+    body fruits-settings .options .add-fruit {
+      padding: 7px 7px 7px 30px;
+      background: #008000;
+      cursor: pointer; }
+  body fruits-settings table {
+    width: 900px;
+    margin: 10px 0 20px; }
+    body fruits-settings table thead tr,
+    body fruits-settings table tbody tr {
+      height: 40px;
+      background: #cccccc; }
+      body fruits-settings table thead tr th,
+      body fruits-settings table tbody tr th {
+        font-weight: 400;
+        padding: 10px; }
+    body fruits-settings table tbody tr {
+      cursor: pointer; }
+      body fruits-settings table tbody tr:hover {
+        background: #dddddd; }
+      body fruits-settings table tbody tr td {
+        text-align: center;
+        padding: 20px; }
+      body fruits-settings table tbody tr td.description {
+        text-align: left; }
+      body fruits-settings table tbody tr .settings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        body fruits-settings table tbody tr .settings button {
+          margin: 0 0 10px 0;
+          cursor: pointer;
+          border-radius: 0;
+          border: transparent; }
+        body fruits-settings table tbody tr .settings button:first-child {
+          background: #ffffff url(../../images/icons/edit.png) no-repeat 0 0;
+          background-size: cover; }
+        body fruits-settings table tbody tr .settings button:last-child {
+          background: #ffffff url(../../images/icons/remove.png) no-repeat 0 0;
+          background-size: cover;
+          margin: 0; }
+  body fruits-settings .modal-add form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #ffffff;
+    min-width: 440px; }
+    body fruits-settings .modal-add form input, body fruits-settings .modal-add form textarea {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      border: 2px solid #cccccc;
+      padding: 5px;
+      border-radius: 5px;
+      outline: none; }
+    body fruits-settings .modal-add form textarea {
+      resize: none;
+      height: 150px; }
+    body fruits-settings .modal-add form .form-buttons {
+      display: flex;
+      justify-content: center; }
+      body fruits-settings .modal-add form .form-buttons button {
+        cursor: pointer; }
+      body fruits-settings .modal-add form .form-buttons :last-child {
+        background: red; }
+  body fruits-settings .modal-message > div {
+    padding: 50px;
+    background: #ffffff; }
+  body fruits-settings .modal-message button {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 10px auto 0;
+    cursor: pointer; }
+  body fruits-settings .modal-remove > div {
+    padding: 30px;
+    background: #ffffff;
+    text-align: center; }
+  body fruits-settings .modal-remove button {
+    cursor: pointer;
+    border: transparent; }
+  body fruits-settings .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; }
+    body fruits-settings .pagination button {
+      cursor: pointer;
+      border-radius: 0;
+      border: transparent;
+      background: #cccccc; }
+      body fruits-settings .pagination button.firstPage {
+        background: #ffffff url(../../images/icons/double_arrow.png) no-repeat 0 0;
+        background-size: cover;
+        transform: rotate(180deg); }
+      body fruits-settings .pagination button.lastPage {
+        background: #ffffff url(../../images/icons/double_arrow.png) no-repeat 0 0;
+        background-size: cover; }
+    body fruits-settings .pagination button.active {
+      background: #5CBCF6; }

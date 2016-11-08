@@ -1,0 +1,85 @@
+<div class="options">
+  <div class="search-block">
+    <i class="search-icon"></i>
+    <input type="text" class="search-fruit" placeholder="Название продукта" data-ng-model="$ctrl.search.name">
+  </div>
+  <div class="add-block">
+    <i class="add-icon"></i>
+    <button type="button" class="add-fruit" data-ng-click="$ctrl.openModalAdd()">Добавить продукт</button>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Продукт</th>
+      <th>Описание</th>
+      <th>Каллорий/100гр</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="fruit in $ctrl.fruits | filter: $ctrl.search:strict | limitTo : $ctrl.limitFruit">
+      <td>{{fruit.name}}</td>
+      <td class="description">{{fruit.description}}</td>
+      <td>{{fruit.calorie}}</td>
+      <td class="settings">
+        <button type="button" title="Редактировать" data-ng-click="$ctrl.openEditFruit(fruit)"></button>
+        <button type="button" title="Удалить" data-ng-click="$ctrl.removeFruit(fruit.id)"></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="pagination" data-ng-if="$ctrl.pagination">
+    <button class="firstPage" title="На первую страницу"
+            data-ng-if="$ctrl.currentPage >= 1"
+            data-ng-click="$ctrl.firstPage()"
+    ></button>
+    <button data-ng-repeat="i in $ctrl.allPagesFunc($ctrl.allPages) track by $index"
+            data-ng-class="($ctrl.currentPage === $index ) ? 'active' : '' "
+            data-ng-click="$ctrl.goToPage($index + 1)">
+        {{ $index + 1 }}
+    </button>
+    <button class="lastPage" title="На последнюю страницу"
+            data-ng-if="$ctrl.currentPage + 1 < $ctrl.allPages"
+            data-ng-click="$ctrl.lastPage()"
+    ></button>
+</div>
+<a href="/">На главную</a>
+
+<div class="modal-add" data-ng-if="$ctrl.openModal">
+  <form class="form-add-fruit" data-ng-submit="$ctrl.submitAddFruit()">
+    <label>
+      Название продукта:
+      <input type="text" data-ng-model="$ctrl.newFruit" name="fruit">
+    </label>
+    <label>
+      Описание:
+      <textarea data-ng-model="$ctrl.newDescription" name="description"></textarea>
+    </label>
+    <label>
+      Каллорий / 100гр
+      <input type="text" name="calorie" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-ng-model="$ctrl.newCalorie">
+    </label>
+    <div class="form-buttons">
+      <button type="submit">Сохранить</button>
+      <button type="button" data-ng-click="$ctrl.closeModalAdd()">Отмена</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal-message" data-ng-if="$ctrl.message">
+  <div>
+    {{ $ctrl.message }}
+    <button type="button" data-ng-click="$ctrl.reloadAllFruits()">OK</button>
+  </div>
+</div>
+
+
+<div class="modal-remove" data-ng-if="$ctrl.modalRemove">
+  <div>
+    <p>Вы уверены?</p>
+    <button type="button" data-ng-click="$ctrl.removeFruitConfirmation($ctrl.removeFruitClone)">Да</button>
+    <button type="button" data-ng-click="$ctrl.closeModalRemove()">Отмена</button>
+  </div>
+</div>
+
+

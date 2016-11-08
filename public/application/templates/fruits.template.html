@@ -1,0 +1,53 @@
+<div class="content">
+  <div class="options-block">
+    <span>Данные</span>
+    <label>
+      Выберите интересующий Вам продукт:
+      <select data-ng-model="$ctrl.fruit">
+        <option data-ng-repeat="fruit in $ctrl.fruits">{{ fruit.name }}</option>
+      </select>
+    </label>
+    <label>
+      Введите количество грамм продукта:
+      <input type="text" data-ng-model="$ctrl.calorie" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+    </label>
+    <button type="submit" data-ng-click="$ctrl.getInformation()">Добавить</button>
+  </div>
+  <div class="description-block">
+    <span>Информация</span>
+    <!--<div class="information-block" data-ng-if="$ctrl.information">-->
+      <!--<div class="info">-->
+        <!--{{ $ctrl.fruitInfo }}-->
+      <!--</div>-->
+      <!--<div class="calorie">-->
+        <!--В {{ $ctrl.calorieInfo }} грамм этого продукта - {{ $ctrl.calorieSum }} каллорий-->
+      <!--</div>-->
+    <!--</div>-->
+    <span data-ng-if="$ctrl.information" class="clear" data-ng-click="$ctrl.clearSelectFruits()">Очистить форму</span>
+    <table data-ng-if="$ctrl.information">
+      <thead>
+      <tr>
+        <th>Продукт</th>
+        <th>Грамм</th>
+        <th>Калории</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr data-ng-repeat="fruit in $ctrl.selectFruits">
+        <td>{{fruit.fruit}}</td>
+        <td>{{fruit.gram}}</td>
+        <td>{{fruit.calorie}}</td>
+        <td class="clear-fruit" data-ng-click="$ctrl.removeFruit(fruit)"></td>
+      </tr>
+      </tbody>
+    </table>
+    <span data-ng-if="$ctrl.information" class="sum-calorie">Сумма калорий : {{ $ctrl.allCalories }}</span>
+  </div>
+</div>
+<div class="modal-error" data-ng-if="$ctrl.error">
+  <div class="error">
+    {{ $ctrl.errorMessage }}
+    <button type="button" data-ng-click="$ctrl.close()">ОК</button>
+  </div>
+</div>
+<a href="/" class="home">На главную</a>

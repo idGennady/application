@@ -1,0 +1,427 @@
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  line-height: 18px;
+  overflow-x: hidden;
+
+  a, button{
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid #5CBCF6;
+    border-radius: 10px;
+    margin-right: 15px;
+    background: #5CBCF6;
+    color: #ffffff;
+    outline: 0;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  a.home{
+    margin-top: 10px;
+  }
+
+
+  @keyframes background {
+    0%   {background: rgba(0, 0, 0, 0)}
+    100% {background: rgba(0, 0, 0, 0.7)}
+  }
+  .modal-error,
+  .modal-add,
+  .modal-message,
+  .modal-remove{
+    z-index: 2;
+    display: flex;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    animation: background 1s;
+    justify-content: center;
+    align-items: center;
+
+    .error{
+      padding: 50px 50px 20px;
+      display: flex;
+      background: #fff;
+      flex-direction: column;
+      max-width: 320px;
+      align-items: center;
+      justify-content: center;
+
+      button{
+        border-radius: 0;
+        margin-top: 30px;
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+  }
+
+
+
+
+
+  /*
+    homepage open
+  */
+
+  homepage{
+
+  }
+
+  /*
+    homepage close
+  */
+
+
+
+
+  /*
+    fruits open
+  */
+
+  fruits{
+
+
+    .content{
+      display: flex;
+      position: relative;
+
+      span{
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #cccccc;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      span.clear{
+        height: 30px;
+        width: 150px;
+        position: absolute;
+        right: -150px;
+        cursor: pointer;
+      }
+
+      span.sum-calorie{
+        height: 30px;
+        width: 250px;
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+        margin: 0;
+      }
+
+      table{
+        width: 100%;
+        thead{
+          tr{
+            td{
+              height: 30px;
+            }
+          }
+        }
+        tbody{
+          tr{
+            td{
+              height: 30px;
+              text-align: center;
+              &:last-child{
+                background: url(../../images/icons/close.png) no-repeat;
+                width: 30px;
+                background-size: cover;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+
+      .options-block{
+        width: 300px;
+        border: 1px solid #cccccc;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        select, input{
+          width: 200px;
+          height: 25px;
+          border: none;
+          margin: 10px auto;
+          display: flex;
+          outline: 0;
+          border-radius: 7px;
+          padding: 0 0 0 5px;
+          box-sizing: border-box;
+          cursor: pointer;
+        }
+        select{
+          background: #cccccc;
+        }
+
+        input{
+          border: 1px solid;
+        }
+
+        button{
+          display: flex;
+          margin: 10px auto;
+          width: 130px;
+          padding: 5px;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+      }
+
+      .description-block{
+        width: 600px;
+        border: 1px solid #cccccc;
+        box-sizing: border-box;
+        border-left: transparent;
+
+        .information-block{
+
+          .info, .calorie{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            margin-bottom: 30px;
+          }
+
+          .calorie{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  /*
+    fruits close
+  */
+
+  /*
+    fruits-settings open
+  */
+
+  fruits-settings{
+    .options{
+      display: flex;
+      align-items: center;
+
+      .search-block, .add-block{
+        position: relative;
+      }
+
+      .search-icon, .add-icon{
+        background: url(../../images/icons/search.png) no-repeat;
+        width: 19px;
+        height: 19px;
+        background-size: cover;
+        position: absolute;
+        left: 7px;
+        top: 13px;
+      }
+      .add-icon{
+        background: #ffffff url(../../images/icons/plus.png) no-repeat;
+        background-size: cover;
+        top: 7.5px;
+        border-radius: 9px;
+      }
+
+      .search-fruit{
+        width: 200px;
+        height: 25px;
+        margin: 10px 10px 10px 0;
+        display: flex;
+        outline: 0;
+        border-radius: 10px 0;
+        padding: 0 0 0 30px;
+        box-sizing: border-box;
+        cursor: pointer;
+        border: 1px solid #5D5D5D;
+        color: #5D5D5D;
+      }
+
+      .add-fruit{
+        padding: 7px 7px 7px 30px;
+        background: #008000;
+        cursor: pointer;
+      }
+
+    }
+
+
+    table{
+      width: 900px;
+      margin: 10px 0 20px;
+      
+      
+      thead tr,
+      tbody tr{
+        height: 40px;
+        background: #cccccc;
+
+        th{
+          font-weight: 400;
+          padding: 10px;
+        }
+
+      }
+
+      tbody tr{
+        cursor: pointer;
+
+        &:hover{
+          background: #dddddd;
+        }
+
+        td{
+          text-align: center;
+          padding: 20px;
+        }
+        td.description{
+          text-align: left;
+        }
+
+        .settings{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          button{
+            margin: 0 0 10px 0;
+            cursor: pointer;
+            border-radius: 0;
+            border: transparent;
+          }
+          button:first-child{
+            background: #ffffff url(../../images/icons/edit.png) no-repeat 0 0;
+            background-size: cover;
+          }
+          button:last-child{
+            background: #ffffff url(../../images/icons/remove.png) no-repeat 0 0;
+            background-size: cover;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+
+    .modal-add{
+      form{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background: #ffffff;
+        min-width: 440px;
+
+        input, textarea{
+          display: block;
+          width: 80%;
+          margin: 10px auto;
+          border: 2px solid #cccccc;
+          padding: 5px;
+          border-radius: 5px;
+          outline: none;
+        }
+        textarea{
+          resize: none;
+          height: 150px;
+        }
+
+        .form-buttons{
+          display: flex;
+          justify-content: center;
+
+          button{
+            cursor: pointer;
+          }
+
+          :last-child{
+            background: red;
+          }
+        }
+      }
+    }
+
+    .modal-message{
+      > div{
+        padding: 50px;
+        background: #ffffff;
+      }
+
+      button{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        margin: 10px auto 0;
+        cursor: pointer;
+      }
+    }
+
+    .modal-remove{
+      > div{
+        padding: 30px;
+        background: #ffffff;
+        text-align: center;
+      }
+      button{
+        cursor: pointer;
+        border: transparent;
+      }
+    }
+
+    .pagination{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      button{
+        cursor: pointer;
+        border-radius: 0;
+        border: transparent;
+        background: #cccccc;
+        &.firstPage{
+          background: #ffffff url(../../images/icons/double_arrow.png) no-repeat 0 0;
+          background-size: cover;
+          transform: rotate(180deg);
+        }
+        &.lastPage{
+          background: #ffffff url(../../images/icons/double_arrow.png) no-repeat 0 0;
+          background-size: cover;
+        }
+      }
+      button.active{
+        background: #5CBCF6;
+      }
+    }
+  }
+
+  /*
+    fruits-settings close
+  */
+
+}
